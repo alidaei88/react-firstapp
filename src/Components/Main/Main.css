@@ -1,6 +1,20 @@
 .main {
-    background-color: #ccc;
+    width: 30%;
+    margin: auto;
+    height: 400px;
     display: flex;
-    margin-top: 10px;
+    margin-top: 12%;
     justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0px 5px 5px 2px #ccc;
+
+}
+
+.counter {
+    margin: 0 15px;
+    font-size: 42px;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px;
+
 }

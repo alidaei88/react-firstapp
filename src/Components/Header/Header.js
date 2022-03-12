@@ -7,7 +7,7 @@ import "./Header.css"
 
     <div className="header">
 
-        <p>Header</p>
+        <p>Counter App</p>
         <div className="header-buttons">
         <button className="login" >Login</button>
         <button className="logout" >Log out</button>
