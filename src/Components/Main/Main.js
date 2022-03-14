@@ -10,9 +10,9 @@ const Main = () => {
     
     useEffect(() => {
         if (count > 15) {
-            setColor("rgba(0,128,0, 0.2)")
+            setColor("rgba(0,128,0, 0.5)")
         } else if (count < 5) {
-            setColor("rgba(255, 0, 0, 0.2)")
+            setColor("rgba(255, 0, 0, 0.5)")
         } else {
             setColor("#ccc")
           }

@@ -1,6 +1,13 @@
+body{
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  min-height: 875px;
+  
   display: flex;
   flex-direction: column;
+  
+  
 }
 
