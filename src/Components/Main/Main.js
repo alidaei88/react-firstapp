@@ -1,12 +1,14 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import  Button  from ".././Button/Button"
+import LimitedInput from "../LimitedInput/LimitedInput";
 import "./Main.css"
 
 const Main = () => {
 
     const [count, setCount] = useState(10)
-    const [ maxLimit, setMaxLimit] = useState(19)
-    const [minLimit, setMinLimit] = useState(0)
+    const [ maxLimit, setMaxLimit] = useState()
+    const [minLimit, setMinLimit] = useState()
     const [color, setColor] = useState("#ccc")
 
     const increment = () => {
@@ -40,8 +42,9 @@ const Main = () => {
 
 
     const changeMaxHandler = (value) => {
-
-        setMaxLimit(value)
+        // if (value <= count) setCount(10)
+         setMaxLimit(value)
+        
     }
 
 
@@ -53,20 +56,29 @@ const Main = () => {
 
     return(
         <>
-        <div>
-            <label htmlFor="">Max Limit</label>
-            <input type="number" onChange={(e) => changeMaxHandler(e.target.value)} ></input>
-            <br></br>
-            <label htmlFor="">Min limit</label>
-            <input type="number" onChange={(e) => changeMinHandler(e.target.value) } />
-        </div>
+        {/* <div>
+            <LimitedInput label={"Maximum Limit"} onchange={ changeMaxHandler }/>
+            <LimitedInput label={"Minimum Limit"}  onchange={ changeMinHandler }/> 
+        </div> */}
+            
+            <div className="limit-inputs-holder">
+                <div className="maximum">
+                     <label htmlFor="">{ "Maximum Limit:" }</label>
+                     <input type="number" onChange={(e) => changeMaxHandler(+e.target.value) } />
+                </div>  
+                <div className="minimum">
+                     <label htmlFor="">{ "Minimum Limit:" }</label>
+                     <input  type="number" onChange={ (e) => changeMinHandler(+e.target.value) } />
+                 </div>
+              
+        </div>    
         <div className="main" style={{ backgroundColor: color }}>
             <Button style={ {backgroundColor: "green"}} onClick={ increment } > + </Button>
             <span className="counter" > { count } </span>
             <Button style={ {backgroundColor: "red"} } onClick={ decrement }> - </Button>
         </div>
 
-        </>
+     </>
         
     );
 
